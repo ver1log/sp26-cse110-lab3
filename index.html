@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Meeting Minutes</title>
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=cOvwphEOWyOq&format=png&color=000000" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Project Planning</h1>
+      </div>
+
+        <div>Meeting Plan</div>
+      <nav>
+        <ul>
+          <li><a href="#brainstorming"> Brainstorming</a></li>
+          <li><a href="#check-ins"> Check-ins</a></li>
+          <li><a href="#documentation"> Documentation</a></li>
+        </ul>
+      </nav>
+
+      
+    </header>
+
+    <main>
+        <div>
+        <p>Date: 2026-01-01</p>
+        </div>
+        
+        
+        <p>Attendees: <span><b>John Doe, Jane Smith, Bob Johnson</b></span></p>
+        
+
+        <div>
+        <h2>Agenda</h2>
+        <p>We will be going over how we want the project to be designed. <br>Things like tools, general ideas, what we want to implement, ect. We will make any documentation nessesary. <br><em> This is the time to just dump what we are thinking and reach a unified project we want to work on!</em> </p>
+        </div>
+
+        <div>
+        <h2>Unfinished Business</h2>
+        <p>There is no unfinished business at this time.</p>
+        </div>
+
+        <div>
+        <h2>New Business</h2>
+        <p>The project outline is due by the <strong>end of the week</strong>. We will need to have a solid plan in place to ensure that we can meet this deadline.</p>
+        </div>
+
+        <hr>
+
+        <section id="brainstorming">
+            
+            <h2>Brainstorming</h2>
+            <p>In this section, we will discuss the ideas and strategies for our project. We will explore various approaches and select the best one to move forward with. And the overall timeline</p>
+            
+            <h3>Timeline</h3>
+            <ol>
+                <li>Implement key features for MVP</li>
+                <li>See if beta testers like current implementation, <i>Use a servey to collect participants</i></li>
+                <li>If good add more features, if not fix issues. And repeat this feedback loop</li>
+            </ol>
+
+            <h3>Tech Stack</h3>
+            <ul>
+                <li>Frontend: React</li>
+                <li>Backend: Node.js with Express</li>  
+                <li>Database: MongoDB</li>
+            </ul>
+            </section>
+
+        
+        <hr>
+    
+        <section id="check-ins">
+            <h2>Check-ins</h2>
+            <p>Regular check-ins will be scheduled to monitor our progress and address any challenges that may arise. This will help us stay on track and ensure that we are meeting our goals.</p>
+        </section>
+    
+        <hr>
+
+        <section id="documentation">
+            <h2>Documentation</h2>
+            <p>Proper documentation is crucial for the success of our project. We will maintain detailed records of our work, including decisions made, code changes, and any issues encountered.</p>
+        <details>
+            <summary>Documented Videos and Audio</summary>
+            <audio controls>
+                <source src="meeting_audio.mp3" type="audio/mpeg">
+            </audio>
+            <br>
+            <video width="640" height="360" controls>
+                <source src="https://stock.adobe.com/search/audio?k=1966089145" type="video/mp4">
+            </video>
+        </details>
+        </section>
+    </main>
+    
+
+    <footer>
+        <br> 
+        <p>&copy; CSE 110</p>
+        <form>
+            <details>
+            <summary>Contact Us</summary>
+                <fieldset>
+                <legend>Contact Information</legend>
+
+                <!-- Text input -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="date">Preferred Contact Date:</label>
+                <input type="date" id="date" name="date"><br><br>
+
+                <p>Preferred Contact Method:</p>
+                <input type="radio" id="email" name="contact" value="email">
+                <label for="email">Email</label>
+
+                <input type="radio" id="phone" name="contact" value="phone">
+                <label for="phone">Phone</label><br><br>
+
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">Subscribe to updates</label><br><br>
+
+                <label for="topic">Topic:</label>
+                <select id="topic" name="topic">
+                    <option value="general">General</option>
+                    <option value="support">Support</option>
+                    <option value="feedback">Feedback</option>
+                </select><br><br>
+
+                <label for="browser">Preferred Browser:</label>
+                <input list="browsers" id="browser" name="browser">
+                <datalist id="browsers">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Safari">
+                    <option value="Edge">
+                </datalist><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+
+                <button type="submit">Submit</button>
+
+                </fieldset>
+            </details>    
+        </form>
+    </footer>
+  </body>
+</html>
