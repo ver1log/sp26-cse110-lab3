@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro&display=swap');
+
+/* --- CSS Variables with Fallback --- */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: rgb(41, 128, 185);
+  --bg-color: #f4f6f8;
+  --text-color: hsl(210, 11%, 15%);
+  --border-color: color(srgb 0.7 0.75 0.8);
+  --header-bg: color-mix(in srgb, #2c3e50 85%, white);
+}
+
+/* --- Universal Selector --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Element Selector --- */
+body {
+  font-family: 'Merriweather', Georgia, serif; /* font with fallback */
+  background-color: var(--bg-color, #f4f6f8);  /* CSS variable with fallback */
+  color: var(--text-color, #222);
+  font-size: 1rem;           /* relative unit: rem */
+  line-height: 1.6em;        /* relative unit: em */
+  min-width: 280px;          /* absolute unit: px */
+}
+
+/* --- Header: Flexbox Layout --- */
+header {
+  display: flex;                  /* flexbox */
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;                   /* relative unit: rem */
+  background-color: var(--header-bg, #2c3e50);
+  color: #ffffff;                 /* color name fallback via hex */
+  padding: 1.5rem 2rem;           /* shorthand padding */
+  position: sticky;               /* position: sticky */
+  top: 0pt;                       /* absolute unit: pt */
+  z-index: 100;
+  width: 100%;
+}
+
+/* --- ID Selector --- */
+#brainstorming,
+#check-ins,
+#documentation {
+  padding-top: 1rem;
+}
+
+/* --- Class Selector --- */
+.highlight {
+  background-color: rgba(41, 128, 185, 0.15); /* rgba color */
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* --- Nav: display inline-block --- */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline-block;          /* display: inline-block */
+}
+
+/* --- Attribute Selector --- */
+a[href^="#"] {
+  color: orange;                  /* color name */
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* --- Pseudo-class: hover & active --- */
+a[href^="#"]:hover {
+  text-decoration: underline;
+  color: #f0c040;
+}
+
+a[href^="#"]:active {
+  color: hsl(45, 90%, 50%);       /* hsl color */
+}
+
+/* --- Main Content --- */
+main {
+  display: grid;                  /* grid layout */
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;               /* grid attribute */
+  grid-auto-rows: auto;           /* grid attribute */
+  max-width: 900px;               /* max-width */
+  min-width: 280px;               /* min-width */
+  width: 90%;                     /* relative unit: % */
+  margin: 2rem auto;              /* auto margin */
+  padding: 1rem 2rem 1rem 2rem;   /* shorthand padding */
+}
+
+/* --- Element + Element: Adjacent Sibling Combinator --- */
+h2 + p {
+  margin-top: 0.5rem;             /* longhand margin */
+}
+
+/* --- Element ~ Element: General Sibling Combinator --- */
+h3 ~ ul,
+h3 ~ ol {
+  margin-left: 1.5rem;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;            /* longhand margin */
+}
+
+/* --- element > element: Child Combinator --- */
+section > h2 {
+  color: var(--primary-color, #2c3e50);
+  border-bottom: 2px solid var(--accent-color, blue);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Descendant Combinator --- */
+main p {
+  margin-bottom: 0.75rem;
+}
+
+/* --- Combining Two Selectors: element.class --- */
+p.note {
+  font-style: italic;
+  color: hsl(210, 20%, 40%);
+}
+
+/* --- Selector List --- */
+h1, h2, h3 {
+  font-family: 'Source Code Pro', monospace;
+  color: var(--primary-color, #2c3e50);
+}
+
+/* --- Text Styles --- */
+h1 {
+  font-size: 2rem;                /* relative unit */
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* --- Box Model: Border longhand --- */
+section {
+  border-style: solid;
+  border-color: var(--border-color, #ccc);
+  border-width: 1px;
+  border-radius: 6px;
+  padding-top: 1rem;              /* longhand padding */
+  padding-bottom: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #ffffff;
+  height: auto;                   /* height */
+  width: 100%;                    /* width */
+}
+
+/* --- Box Model: Border shorthand --- */
+hr {
+  border: 1px solid var(--border-color, #ccc);
+  margin: 1rem 0;
+}
+
+/* --- Details/Summary: display block --- */
+details {
+  display: block;                 /* display: block */
+  margin: 10px 0px 10px 0px;     /* shorthand margin */
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--accent-color, blue);
+}
+
+summary:hover {
+  color: hsl(204, 70%, 35%);
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--primary-color, #2c3e50);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 2rem;           /* shorthand padding */
+  font-size: 14pt;                /* absolute unit: pt */
+  position: relative;             /* position: relative */
+}
+
+/* --- Fieldset & Form --- */
+fieldset {
+  border: 2px solid var(--accent-color, blue); /* shorthand border */
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  max-width: 480px;               /* max-width */
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: orange;
+}
+
+label {
+  display: inline-block;
+  min-width: 160px;               /* min-width */
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 1rem;
+  width: 200px;
+}
+
+/* --- Pseudo-class: button hover & active --- */
+button[type="submit"] {
+  background-color: var(--accent-color, blue);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: hsl(204, 70%, 40%);
+}
+
+button[type="submit"]:active {
+  background-color: rgb(31, 97, 141);
+}
+
+/* --- :has() Selector (2023) --- */
+/* Style sections that contain an h3 */
+section:has(h3) {
+  border-left: 4px solid var(--accent-color, blue);
+}
+
+/* --- Nested Selectors (2023) --- */
+/* Nest ol/ul rules inside section */
+section {
+  & ol {
+    padding-left: 1.5rem;
+    list-style-type: decimal;
+  }
+
+  & ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+
+  & li {
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* --- display: none example (hide audio if not supported) --- */
+audio:not([controls]) {
+  display: none;
+}
+
+/* --- display: inline for small spans --- */
+nav ul li a {
+  display: inline;
+}
+
+/* --- Media Query: Responsiveness --- */
+@media (max-width: 600px) {
+  /* Very small screens / phones */
+  body {
+    font-size: 0.9rem;
+  }
+
+  header {
+    padding: 1rem;
+    position: static;             /* position: static */
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+  }
+
+  fieldset {
+    max-width: 100%;
+  }
+
+  label {
+    display: block;
+    min-width: unset;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Tablet / smaller laptop */
+  main {
+    width: 95%;
+    padding: 1rem 1.5rem;
+  }
+}
+
+
+
+
